@@ -1,0 +1,92 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Page-1" id="65oChfOdYfvCM9E4rpzd">
+    <mxGraphModel dx="983" dy="613" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="620" width="585" x="90" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-18" edge="1" parent="1" source="kvc5X2BZ3Uel35Xh1f9l-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startSize=15;endArrow=ERmandOne;endFill=0;endSize=15;startArrow=ERmandOne;startFill=0;" target="kvc5X2BZ3Uel35Xh1f9l-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-20" edge="1" parent="1" source="kvc5X2BZ3Uel35Xh1f9l-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startSize=15;endArrow=ERmandOne;endFill=0;endSize=15;startArrow=ERmandOne;startFill=0;" target="kvc5X2BZ3Uel35Xh1f9l-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="605" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;u&gt;id [PK]&lt;/u&gt;&lt;/div&gt;&lt;div&gt;username&lt;/div&gt;&lt;div&gt;display_name&lt;/div&gt;&lt;div&gt;password&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="90" x="320" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-17" edge="1" parent="1" source="kvc5X2BZ3Uel35Xh1f9l-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startSize=15;endSize=15;endArrow=ERmandOne;endFill=0;startArrow=ERmandOne;startFill=0;" target="kvc5X2BZ3Uel35Xh1f9l-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;u&gt;user_id [FK]&lt;/u&gt;&lt;/div&gt;&lt;div&gt;wins&lt;/div&gt;&lt;div&gt;losses&lt;/div&gt;&lt;div&gt;ratio&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="90" x="320" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;u&gt;user_id [FK]&lt;/u&gt;&lt;/div&gt;&lt;div&gt;wins&lt;/div&gt;&lt;div&gt;losses&lt;/div&gt;&lt;div&gt;ratio&lt;/div&gt;&lt;div&gt;ships_sunk&lt;/div&gt;&lt;div&gt;shots_hit&lt;/div&gt;&lt;div&gt;shots_missed&lt;/div&gt;&lt;div&gt;total_shots&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="90" x="110" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;u&gt;user_id [FK]&lt;/u&gt;&lt;/div&gt;&lt;div&gt;wins&lt;/div&gt;&lt;div&gt;losses&lt;/div&gt;&lt;div&gt;ratio&lt;/div&gt;&lt;div&gt;hits&lt;/div&gt;&lt;div&gt;stands&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="90" x="320" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;u&gt;user_id [FK]&lt;/u&gt;&lt;/div&gt;&lt;div&gt;wins&lt;/div&gt;&lt;div&gt;losses&lt;/div&gt;&lt;div&gt;ratio&lt;/div&gt;&lt;div&gt;red_pieces&lt;/div&gt;&lt;div&gt;yellow_pieces&lt;/div&gt;&lt;div&gt;total_pieces&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="90" x="560" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;u&gt;id [PK]&lt;/u&gt;&lt;/div&gt;&lt;div&gt;display_name&lt;/div&gt;&lt;div&gt;game_name&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="90" x="140" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-16" edge="1" parent="1" source="kvc5X2BZ3Uel35Xh1f9l-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=15;endArrow=ERmandOne;endFill=0;startArrow=ERzeroToMany;startFill=0;startSize=15;entryX=1.009;entryY=0.34;entryDx=0;entryDy=0;entryPerimeter=0;" target="kvc5X2BZ3Uel35Xh1f9l-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="230" y="583" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;u&gt;game_id [FK]&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;step [PK]&lt;/u&gt;&lt;/div&gt;&lt;div&gt;instruction&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="90" x="550" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;user&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="90" x="320" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;user_scores&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="90" x="320" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;blackjack&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="90" x="320" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-19" edge="1" parent="1" source="kvc5X2BZ3Uel35Xh1f9l-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startSize=15;endArrow=ERmandOne;endFill=0;endSize=15;startArrow=ERmandOne;startFill=0;" target="kvc5X2BZ3Uel35Xh1f9l-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;battleship&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="90" x="110" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;connect_four&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="90" x="560" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;game&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="90" x="140" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;tutorial&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="90" x="550" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="holds data for/has data in" vertex="1">
+          <mxGeometry height="30" width="140" x="370" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="has data in/holds data for" vertex="1">
+          <mxGeometry height="30" width="150" x="460" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="holds data for/has data in" vertex="1">
+          <mxGeometry height="30" width="150" x="150" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="holds data for/has data in" vertex="1">
+          <mxGeometry height="30" width="140" x="370" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="kvc5X2BZ3Uel35Xh1f9l-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="has a/belongs to" vertex="1">
+          <mxGeometry height="30" width="110" x="315" y="550" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
