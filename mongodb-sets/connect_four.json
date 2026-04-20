@@ -1,0 +1,92 @@
+[
+    {
+        "user_id": 1,
+        "wins": 5,
+        "losses": 3,
+        "ratio": 1.67,
+        "red_pieces": 58,
+        "yellow_pieces": 53,
+        "total_pieces": 111
+    },
+    {
+        "user_id": 2,
+        "wins": 3,
+        "losses": 5,
+        "ratio": 0.60,
+        "red_pieces": 49,
+        "yellow_pieces": 56,
+        "total_pieces": 105
+    },
+    {
+        "user_id": 3,
+        "wins": 3,
+        "losses": 3,
+        "ratio": 1.00,
+        "red_pieces": 60,
+        "yellow_pieces": 58,
+        "total_pieces": 118
+    },
+    {
+        "user_id": 4,
+        "wins": 8,
+        "losses": 8,
+        "ratio": 1.00,
+        "red_pieces": 150,
+        "yellow_pieces": 148,
+        "total_pieces": 298
+    },
+    {
+        "user_id": 5,
+        "wins": 3,
+        "losses": 1,
+        "ratio": 3.00,
+        "red_pieces": 70,
+        "yellow_pieces": 62,
+        "total_pieces": 132
+    },
+    {
+        "user_id": 6,
+        "wins": 10,
+        "losses": 0,
+        "ratio": 10.00,
+        "red_pieces": 210,
+        "yellow_pieces": 180,
+        "total_pieces": 390
+    },
+    {
+        "user_id": 7,
+        "wins": 0,
+        "losses": 0,
+        "ratio": 0.00,
+        "red_pieces": 0,
+        "yellow_pieces": 0,
+        "total_pieces": 0
+    },
+    {
+        "user_id": 8,
+        "wins": 2,
+        "losses": 4,
+        "ratio": 0.50,
+        "red_pieces": 65,
+        "yellow_pieces": 72,
+        "total_pieces": 137
+    },
+    {
+        "user_id": 9,
+        "wins": 2,
+        "losses": 0,
+        "ratio": 2.00,
+        "red_pieces": 50,
+        "yellow_pieces": 40,
+        "total_pieces": 90
+    },
+    {
+        "user_id": 10,
+        "wins": 0,
+        "losses": 5,
+        "ratio": 0.00,
+        "red_pieces": 55,
+        "yellow_pieces": 80,
+        "total_pieces": 135
+    }
+]

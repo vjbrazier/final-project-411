@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "username": "vjbrazier",
+        "display_name": "Vincent",
+        "password": "***",
+        "total_wins": 18,
+        "total_losses": 12,
+        "total_ratio": 1.50
+    },
+        {
+        "id": 2,
+        "username": "banana",
+        "display_name": "Taylor",
+        "password": "***",
+        "total_wins": 12,
+        "total_losses": 18,
+        "total_ratio": 0.67
+    },
+        {
+        "id": 3,
+        "username": "overlord",
+        "display_name": "David",
+        "password": "***",
+        "total_wins": 11,
+        "total_losses": 9,
+        "total_ratio": 1.22
+    },
+        {
+        "id": 4,
+        "username": "hogrider",
+        "display_name": "Logan",
+        "password": "***",
+        "total_wins": 24,
+        "total_losses": 16,
+        "total_ratio": 1.50
+    },
+        {
+        "id": 5,
+        "username": "kicker",
+        "display_name": "Matt",
+        "password": "***",
+        "total_wins": 7,
+        "total_losses": 13,
+        "total_ratio": 0.54
+    },
+        {
+        "id": 6,
+        "username": "nothing",
+        "display_name": "Mike",
+        "password": "***",
+        "total_wins": 15,
+        "total_losses": 5,
+        "total_ratio": 3.00
+    },
+        {
+        "id": 7,
+        "username": "alaire",
+        "display_name": "Nikki",
+        "password": "***",
+        "total_wins": 0,
+        "total_losses": 0,
+        "total_ratio": 0.00
+    },
+        {
+        "id": 8,
+        "username": "dat",
+        "display_name": "Oryan",
+        "password": "***",
+        "total_wins": 10,
+        "total_losses": 21,
+        "total_ratio": 0.48
+    },
+        {
+        "id": 9,
+        "username": "king88",
+        "display_name": "Phil",
+        "password": "***",
+        "total_wins": 18,
+        "total_losses": 6,
+        "total_ratio": 3.00
+    },
+        {
+        "id": 10,
+        "username": "moon",
+        "display_name": "Sheldon",
+        "password": "***",
+        "total_wins": 5,
+        "total_losses": 15,
+        "total_ratio": 0.33
+    }
+]

@@ -1,0 +1,102 @@
+[
+    {
+        "user_id": 1,
+        "wins": 6,
+        "losses": 4,
+        "ratio": 1.50,
+        "ships_sunk": 14,
+        "shots_hit": 42,
+        "shots_missed": 33,
+        "total_shots": 75
+    },
+    {
+        "user_id": 2,
+        "wins": 4,
+        "losses": 6,
+        "ratio": 0.67,
+        "ships_sunk": 10,
+        "shots_hit": 35,
+        "shots_missed": 41,
+        "total_shots": 76
+    },
+    {
+        "user_id": 3,
+        "wins": 4,
+        "losses": 3,
+        "ratio": 1.33,
+        "ships_sunk": 18,
+        "shots_hit": 52,
+        "shots_missed": 41,
+        "total_shots": 93
+    },
+    {
+        "user_id": 4,
+        "wins": 8,
+        "losses": 4,
+        "ratio": 2,
+        "ships_sunk": 34,
+        "shots_hit": 96,
+        "shots_missed": 70,
+        "total_shots": 166
+    },
+    {
+        "user_id": 5,
+        "wins": 1,
+        "losses": 10,
+        "ratio": 0.10,
+        "ships_sunk": 5,
+        "shots_hit": 21,
+        "shots_missed": 88,
+        "total_shots": 109
+    },
+    {
+        "user_id": 6,
+        "wins": 2,
+        "losses": 0,
+        "ratio": 2,
+        "ships_sunk": 10,
+        "shots_hit": 28,
+        "shots_missed": 12,
+        "total_shots": 40
+    },
+    {
+        "user_id": 7,
+        "wins": 0,
+        "losses": 0,
+        "ratio": 0.00,
+        "ships_sunk": 0,
+        "shots_hit": 0,
+        "shots_missed": 0,
+        "total_shots": 0
+    },
+    {
+        "user_id": 8,
+        "wins": 5,
+        "losses": 7,
+        "ratio": 0.71,
+        "ships_sunk": 22,
+        "shots_hit": 61,
+        "shots_missed": 73,
+        "total_shots": 134
+    },
+    {
+        "user_id": 9,
+        "wins": 12,
+        "losses": 2,
+        "ratio": 6,
+        "ships_sunk": 51,
+        "shots_hit": 140,
+        "shots_missed": 60,
+        "total_shots": 200
+    },
+    {
+        "user_id": 10,
+        "wins": 5,
+        "losses": 0,
+        "ratio": 5,
+        "ships_sunk": 25,
+        "shots_hit": 70,
+        "shots_missed": 20,
+        "total_shots": 90
+    }
+]

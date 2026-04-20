@@ -1,0 +1,80 @@
+[
+    {
+        "id": 1,
+        "game_name": "battleship",
+        "display_name": "Battleship",
+        "tutorial": [
+            "Each player places ships of fixed lengths on their hidden grid (horizontal or vertical, no overlap).",
+            "Players alternate calling a coordinate (e.g., B5) to attack.",
+            "Opponent responds “hit,” “miss,” or “sunk” (when all parts of a ship are hit).",
+            "Mark results and continue taking turns.",
+            "First player to sink all enemy ships wins."
+        ]
+    },
+    {
+        "id": 2,
+        "game_name": "blackjack",
+        "display_name": "Blackjack",
+        "tutorial": [
+            "Each player and the dealer receive two cards (players’ cards visible, dealer has one hidden).",
+            "Players take turns choosing to “hit” (draw a card) or “stand” (keep current hand).",
+            "If a hand exceeds 21, that player busts and loses.",
+            "After players finish, dealer draws until reaching at least 17.",
+            "Hands are compared; highest value ≤21 wins (tie = push)."
+        ]
+    },
+    {
+        "id": 3,
+        "game_name": "connect_four",
+        "display_name": "Connect 4",
+        "tutorial": [
+            "Players take turns dropping one piece into any column of the vertical grid.",
+            "The piece falls to the lowest available space in that column.",
+            "Players alternate turns, building lines of their color.",
+            "First player to connect four in a row (horizontal, vertical, or diagonal) wins.",
+            "If the grid fills with no connection, the game is a draw."
+        ]
+    },
+    {
+        "id": 4,
+        "game_name": "monopoly",
+        "display_name": "Monopoly",
+        "tutorial": []
+    },
+    {
+        "id": 5,
+        "game_name": "uno",
+        "display_name": "Uno",
+        "tutorial": []
+    },
+    {
+        "id": 6,
+        "game_name": "trouble",
+        "display_name": "Trouble",
+        "tutorial": []
+    },
+    {
+        "id": 7,
+        "game_name": "yahtzee",
+        "display_name": "Yahtzee",
+        "tutorial": []
+    },
+    {
+        "id": 8,
+        "game_name": "chess",
+        "display_name": "Chess",
+        "tutorial": []
+    },
+    {
+        "id": 9,
+        "game_name": "checkers",
+        "display_name": "Checkers",
+        "tutorial": []
+    },
+    {
+        "id": 10,
+        "game_name": "phase_ten",
+        "display_name": "Phase 10",
+        "tutorial": []
+    }
+]
