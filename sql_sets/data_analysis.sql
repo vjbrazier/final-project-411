@@ -1,6 +1,6 @@
 USE boardgame_aficionados_db;
 
--- 1. Who are the best players overall?
+-- 1. What are the names of the best players overall?
 SELECT u.display_name AS 'Best Players'
 FROM user u, user_scores us
 WHERE u.id = us.user_id

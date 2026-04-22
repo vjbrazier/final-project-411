@@ -1,0 +1,135 @@
+-- This has to be ran first
+use boardgame_aficionados;
+
+-- 1. What are the names of the best players overall?
+db['users'].find(
+  {},
+  {
+    '_id': 0,
+    'display_name': 1
+  }
+)
+  .sort(
+    {'total_ratio': -1}
+  )
+
+-- 2. What players have an overall ratio greater than 1?
+db['users'].find(
+  {'total_ratio': {$gt: 1}},
+  {
+    '_id': 0,
+    'display_name': 1,
+    'total_ratio': 1
+  }
+)
+
+-- 3. Who has played the most pieces in Connect 4?
+db['connect_four'].find(
+  {},
+  {
+    '_id': 0,
+    'user_id': 1,
+    'total_pieces': 1
+  }
+)
+.sort({
+  'total_pieces': -1
+}).limit(1)
+
+-- 4. Who has the highest amount of wins in Battleship? 
+db['battleship'].find(
+  {},
+  {
+    '_id': 0,
+    'user_id': 1,
+    'wins': 1
+  }
+)
+.sort({
+  'wins': -1
+}).limit(1)
+
+-- 5. Who has more than 10 overall wins, but a <1 overall ratio?
+db['users'].find(
+  {
+    $and: [
+    {'total_wins': {$gt: 10}},
+    {'total_ratio': {$lt: 1}}
+    ]
+  },
+  {
+    '_id': 0,
+    'display_name': 1
+  }
+)
+
+-- 6. What player likes red the most in Connect 4? 
+db['connect_four'].find(
+  {},
+  {
+    '_id': 0,
+    'user_id': 1,
+    'red_pieces': 1
+  }
+)
+.sort({
+  'red_pieces': -1
+}).limit(1)
+
+-- 7. Who has more than 20 hits and more than 5 wins in Blackjack?  
+db['blackjack'].find(
+  {
+    $and: [
+      {'hits': {$gt: 20}},
+      {'wins': {$gt: 5}}
+    ]
+  },
+  {
+    '_id': 0,
+    'user_id': 1,
+    'wins': 1,
+    'hits': 1
+  }
+)
+
+-- 8. Who has more than 30 ships sunk or more than 5 wins in Battleship? 
+db['battleship'].find(
+  {
+    $or: [
+      {'ships_sunk': {$gt: 30}},
+      {'wins': {$gt: 5}}
+    ]
+  },
+  {
+    '_id': 0,
+    'user_id': 1,
+    'wins': 1,
+    'ships_sunk': 1
+  }
+)
+
+-- 9. How do you play battleship?
+db['games'].find(
+  {
+    'game_name': 'battleship'
+  },
+  {
+    '_id': 0,
+    'game_name': 1,
+    'tutorial': 1
+  }
+)
+
+-- 10. What user is in the middle of the overall rankings?
+db['users'].find(
+  {},
+  {
+    '_id': 0,
+    'display_name': 1
+  }
+)
+.sort({
+  'total_ratio': 1
+})
+.skip(4)
+.limit(1)
