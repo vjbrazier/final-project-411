@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %> | Boardgame Aficionados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-brand">
+    <span class="brand-icon">♟</span>
+    <span class="brand-text">Boardgame<br><strong>Aficionados</strong></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/" class="nav-link">Home</a></li>
+    <li><a href="/leaderboard" class="nav-link">Leaderboard</a></li>
+    <li><a href="/games" class="nav-link">Games</a></li>
+  </ul>
+  <div class="nav-accent"></div>
+</nav>
+
+<% if (typeof dbConnected !== 'undefined' && !dbConnected) { %>
+<div class="db-warning">
+  ⚠️ Database not connected. Update <code>MONGODB_URI</code> in your <code>.env</code> file to load live data.
+</div>
+<% } %>
+
+<main class="main-content">

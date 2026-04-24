@@ -1,0 +1,61 @@
+<%- include('partials/header') %>
+
+<section class="page-header">
+  <div class="page-header-inner">
+    <h1 class="page-title">Games</h1>
+    <p class="page-sub">All games in the Aficionados library</p>
+  </div>
+</section>
+
+<section class="section">
+  <% if (!dbConnected || games.length === 0) { %>
+  <div class="empty-state">
+    <div class="empty-icon">🎲</div>
+    <p>Connect your database to view the games library.</p>
+  </div>
+  <% } else { %>
+  <div class="games-grid">
+    <% games.forEach(game => { %>
+    <div class="game-library-card <%= game.tutorial && game.tutorial.length > 0 ? 'has-tutorial' : 'no-tutorial' %>">
+      <div class="glc-top">
+        <div class="glc-icon">
+          <%= game.game_name === 'battleship' ? '🚢' :
+              game.game_name === 'blackjack' ? '🃏' :
+              game.game_name === 'connect_four' ? '🔴' :
+              game.game_name === 'chess' ? '♟' :
+              game.game_name === 'checkers' ? '⬤' :
+              game.game_name === 'monopoly' ? '🎩' :
+              game.game_name === 'uno' ? '🟦' :
+              game.game_name === 'trouble' ? '🎯' :
+              game.game_name === 'yahtzee' ? '🎲' :
+              game.game_name === 'phase_ten' ? '🔟' : '🎮' %>
+        </div>
+        <div class="glc-info">
+          <h2 class="glc-name"><%= game.display_name %></h2>
+          <% if (game.tutorial && game.tutorial.length > 0) { %>
+          <span class="glc-badge active-badge">Active</span>
+          <% } else { %>
+          <span class="glc-badge coming-badge">Coming Soon</span>
+          <% } %>
+        </div>
+        <% if (['battleship','blackjack','connect_four'].includes(game.game_name)) { %>
+        <a href="/leaderboard?game=<%= game.game_name %>" class="glc-action-btn">Stats →</a>
+        <% } %>
+      </div>
+      <% if (game.tutorial && game.tutorial.length > 0) { %>
+      <div class="glc-tutorial">
+        <div class="tutorial-label">How to play</div>
+        <ol class="tutorial-steps">
+          <% game.tutorial.forEach(step => { %>
+          <li><%= step %></li>
+          <% }) %>
+        </ol>
+      </div>
+      <% } %>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+</section>
+
+<%- include('partials/footer') %>

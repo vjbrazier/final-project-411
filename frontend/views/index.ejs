@@ -1,0 +1,81 @@
+<%- include('partials/header') %>
+
+<section class="hero">
+  <div class="hero-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">Stats Dashboard</div>
+    <h1 class="hero-title">Where Champions<br><span class="title-accent">Keep Score.</span></h1>
+    <p class="hero-sub">Track wins, losses, and stats across Battleship, Blackjack, and Connect 4. Compete with friends. Prove your dominance.</p>
+    <div class="hero-actions">
+      <a href="/leaderboard" class="btn btn-primary">View Leaderboard</a>
+      <a href="/games" class="btn btn-ghost">Browse Games</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">Games Played</h2>
+    <p class="section-sub">Total matches tracked across all active games</p>
+  </div>
+  <div class="stats-grid">
+    <a href="/leaderboard?game=battleship" class="game-stat-card game-card-bs">
+      <div class="game-card-icon">🚢</div>
+      <div class="game-card-name">Battleship</div>
+      <div class="game-card-count"><%= dbConnected ? gameStats.battleship : '—' %></div>
+      <div class="game-card-label">games played</div>
+    </a>
+    <a href="/leaderboard?game=blackjack" class="game-stat-card game-card-bj">
+      <div class="game-card-icon">🃏</div>
+      <div class="game-card-name">Blackjack</div>
+      <div class="game-card-count"><%= dbConnected ? gameStats.blackjack : '—' %></div>
+      <div class="game-card-label">games played</div>
+    </a>
+    <a href="/leaderboard?game=connect_four" class="game-stat-card game-card-c4">
+      <div class="game-card-icon">🔴</div>
+      <div class="game-card-name">Connect 4</div>
+      <div class="game-card-count"><%= dbConnected ? gameStats.connect_four : '—' %></div>
+      <div class="game-card-label">games played</div>
+    </a>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="section-header">
+    <h2 class="section-title light">Top Players</h2>
+    <p class="section-sub light">Ranked by overall win ratio</p>
+  </div>
+
+  <% if (!dbConnected || topPlayers.length === 0) { %>
+  <div class="empty-state">
+    <div class="empty-icon">🏆</div>
+    <p>Connect your database to see top players.</p>
+    <a href="/leaderboard" class="btn btn-primary">Full Leaderboard</a>
+  </div>
+  <% } else { %>
+  <div class="podium-grid">
+    <% topPlayers.forEach((player, i) => { %>
+    <a href="/player/<%= player.id %>" class="podium-card podium-<%= i + 1 %>">
+      <div class="podium-rank">#<%= i + 1 %></div>
+      <div class="podium-avatar"><%= player.display_name.charAt(0).toUpperCase() %></div>
+      <div class="podium-name"><%= player.display_name %></div>
+      <div class="podium-handle">@<%= player.username %></div>
+      <div class="podium-stats">
+        <span class="stat-pill win"><%= player.total_wins %>W</span>
+        <span class="stat-pill loss"><%= player.total_losses %>L</span>
+        <span class="stat-pill ratio"><%= player.total_ratio.toFixed(2) %> ratio</span>
+      </div>
+    </a>
+    <% }) %>
+  </div>
+  <div class="section-cta">
+    <a href="/leaderboard" class="btn btn-primary">See Full Leaderboard →</a>
+  </div>
+  <% } %>
+</section>
+
+<%- include('partials/footer') %>

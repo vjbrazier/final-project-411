@@ -1,0 +1,131 @@
+<%- include('partials/header') %>
+
+<% if (!player) { %>
+<section class="section">
+  <div class="empty-state">
+    <div class="empty-icon">🔌</div>
+    <p>Connect your database to view player profiles.</p>
+    <a href="/" class="btn btn-primary">Go Home</a>
+  </div>
+</section>
+<% } else { %>
+
+<section class="profile-hero">
+  <div class="profile-hero-inner">
+    <div class="profile-avatar-lg"><%= player.display_name.charAt(0).toUpperCase() %></div>
+    <div class="profile-info">
+      <h1 class="profile-name"><%= player.display_name %></h1>
+      <div class="profile-handle">@<%= player.username %></div>
+      <div class="profile-badges">
+        <span class="badge badge-wins">🏆 <%= player.total_wins %> Wins</span>
+        <span class="badge badge-losses">💀 <%= player.total_losses %> Losses</span>
+        <span class="badge badge-ratio">⚡ <%= player.total_ratio.toFixed(2) %> Ratio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="game-panels">
+
+    <!-- BATTLESHIP -->
+    <div class="game-panel panel-bs">
+      <div class="panel-header">
+        <span class="panel-icon">🚢</span>
+        <h2 class="panel-title">Battleship</h2>
+        <% if (player.battleship) { %>
+        <span class="panel-ratio"><%= player.battleship.ratio.toFixed(2) %> ratio</span>
+        <% } %>
+      </div>
+      <% if (player.battleship && (player.battleship.wins + player.battleship.losses > 0)) { %>
+      <div class="panel-stats-grid">
+        <div class="mini-stat"><div class="mini-val wins"><%= player.battleship.wins %></div><div class="mini-label">Wins</div></div>
+        <div class="mini-stat"><div class="mini-val losses"><%= player.battleship.losses %></div><div class="mini-label">Losses</div></div>
+        <div class="mini-stat"><div class="mini-val"><%= player.battleship.ships_sunk %></div><div class="mini-label">Ships Sunk</div></div>
+        <div class="mini-stat"><div class="mini-val"><%= player.battleship.accuracy %>%</div><div class="mini-label">Accuracy</div></div>
+      </div>
+      <div class="shot-bar-section">
+        <div class="shot-bar-label">
+          <span>Shot accuracy</span>
+          <span><%= player.battleship.shots_hit %> hits / <%= player.battleship.shots_missed %> misses</span>
+        </div>
+        <div class="shot-bar-track">
+          <div class="shot-bar-fill" style="width: <%= player.battleship.accuracy %>%"></div>
+        </div>
+      </div>
+      <% } else { %>
+      <div class="panel-empty">No games played yet.</div>
+      <% } %>
+    </div>
+
+    <!-- BLACKJACK -->
+    <div class="game-panel panel-bj">
+      <div class="panel-header">
+        <span class="panel-icon">🃏</span>
+        <h2 class="panel-title">Blackjack</h2>
+        <% if (player.blackjack) { %>
+        <span class="panel-ratio"><%= player.blackjack.ratio.toFixed(2) %> ratio</span>
+        <% } %>
+      </div>
+      <% if (player.blackjack && (player.blackjack.wins + player.blackjack.losses > 0)) { %>
+      <div class="panel-stats-grid">
+        <div class="mini-stat"><div class="mini-val wins"><%= player.blackjack.wins %></div><div class="mini-label">Wins</div></div>
+        <div class="mini-stat"><div class="mini-val losses"><%= player.blackjack.losses %></div><div class="mini-label">Losses</div></div>
+        <div class="mini-stat"><div class="mini-val"><%= player.blackjack.hits %></div><div class="mini-label">Hits</div></div>
+        <div class="mini-stat"><div class="mini-val"><%= player.blackjack.stands %></div><div class="mini-label">Stands</div></div>
+      </div>
+      <div class="shot-bar-section">
+        <div class="shot-bar-label">
+          <span>Play style (hit rate)</span>
+          <span><%= player.blackjack.hit_rate %>% aggressive</span>
+        </div>
+        <div class="shot-bar-track">
+          <div class="shot-bar-fill bj-fill" style="width: <%= player.blackjack.hit_rate %>%"></div>
+        </div>
+      </div>
+      <% } else { %>
+      <div class="panel-empty">No games played yet.</div>
+      <% } %>
+    </div>
+
+    <!-- CONNECT 4 -->
+    <div class="game-panel panel-c4">
+      <div class="panel-header">
+        <span class="panel-icon">🔴</span>
+        <h2 class="panel-title">Connect 4</h2>
+        <% if (player.connect_four) { %>
+        <span class="panel-ratio"><%= player.connect_four.ratio.toFixed(2) %> ratio</span>
+        <% } %>
+      </div>
+      <% if (player.connect_four && (player.connect_four.wins + player.connect_four.losses > 0)) { %>
+      <div class="panel-stats-grid">
+        <div class="mini-stat"><div class="mini-val wins"><%= player.connect_four.wins %></div><div class="mini-label">Wins</div></div>
+        <div class="mini-stat"><div class="mini-val losses"><%= player.connect_four.losses %></div><div class="mini-label">Losses</div></div>
+        <div class="mini-stat"><div class="mini-val"><%= player.connect_four.total_pieces %></div><div class="mini-label">Pieces Played</div></div>
+        <div class="mini-stat"><div class="mini-val"><%= ((player.connect_four.red_pieces / (player.connect_four.total_pieces || 1)) * 100).toFixed(0) %>%</div><div class="mini-label">Red Pieces</div></div>
+      </div>
+      <div class="piece-color-split">
+        <div class="piece-bar-label">
+          <span>🔴 Red: <%= player.connect_four.red_pieces %></span>
+          <span>🟡 Yellow: <%= player.connect_four.yellow_pieces %></span>
+        </div>
+        <div class="piece-bar-track">
+          <div class="piece-bar-red" style="width: <%= (player.connect_four.red_pieces / (player.connect_four.total_pieces || 1)) * 100 %>%"></div>
+          <div class="piece-bar-yellow" style="width: <%= (player.connect_four.yellow_pieces / (player.connect_four.total_pieces || 1)) * 100 %>%"></div>
+        </div>
+      </div>
+      <% } else { %>
+      <div class="panel-empty">No games played yet.</div>
+      <% } %>
+    </div>
+
+  </div>
+
+  <div class="back-link-wrap">
+    <a href="/leaderboard" class="btn btn-ghost">← Back to Leaderboard</a>
+  </div>
+</section>
+
+<% } %>
+
+<%- include('partials/footer') %>

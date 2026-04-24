@@ -1,0 +1,102 @@
+<%- include('partials/header') %>
+
+<section class="page-header">
+  <div class="page-header-inner">
+    <h1 class="page-title">Leaderboard</h1>
+    <p class="page-sub">How do you stack up?</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="leaderboard-controls">
+    <div class="filter-group">
+      <label class="filter-label">Game</label>
+      <div class="filter-tabs">
+        <a href="/leaderboard?game=overall&sort=<%= sort %>" class="filter-tab <%= game === 'overall' ? 'active' : '' %>">Overall</a>
+        <a href="/leaderboard?game=battleship&sort=<%= sort %>" class="filter-tab <%= game === 'battleship' ? 'active' : '' %>">🚢 Battleship</a>
+        <a href="/leaderboard?game=blackjack&sort=<%= sort %>" class="filter-tab <%= game === 'blackjack' ? 'active' : '' %>">🃏 Blackjack</a>
+        <a href="/leaderboard?game=connect_four&sort=<%= sort %>" class="filter-tab <%= game === 'connect_four' ? 'active' : '' %>">🔴 Connect 4</a>
+      </div>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">Sort By</label>
+      <div class="filter-tabs">
+        <a href="/leaderboard?game=<%= game %>&sort=ratio" class="filter-tab <%= sort === 'ratio' ? 'active' : '' %>">Win Ratio</a>
+        <a href="/leaderboard?game=<%= game %>&sort=wins" class="filter-tab <%= sort === 'wins' ? 'active' : '' %>">Wins</a>
+        <a href="/leaderboard?game=<%= game %>&sort=games_played" class="filter-tab <%= sort === 'games_played' ? 'active' : '' %>">Games Played</a>
+      </div>
+    </div>
+  </div>
+
+  <% if (!dbConnected || players.length === 0) { %>
+  <div class="empty-state">
+    <div class="empty-icon">📊</div>
+    <p><%= !dbConnected ? 'Connect your database to view the leaderboard.' : 'No players found.' %></p>
+  </div>
+  <% } else { %>
+  <div class="leaderboard-table-wrap">
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th class="th-rank">Rank</th>
+          <th class="th-player">Player</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>Played</th>
+          <th>Win Ratio</th>
+          <% if (game === 'battleship') { %>
+          <th>Ships Sunk</th>
+          <th>Accuracy</th>
+          <% } else if (game === 'blackjack') { %>
+          <th>Hits</th>
+          <th>Stands</th>
+          <% } else if (game === 'connect_four') { %>
+          <th>Pieces Played</th>
+          <% } %>
+        </tr>
+      </thead>
+      <tbody>
+        <% players.forEach((player, i) => { %>
+        <tr class="lb-row <%= i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : '' %>" onclick="window.location='/player/<%= player.id %>'">
+          <td class="td-rank">
+            <% if (i === 0) { %><span class="rank-badge gold">1</span>
+            <% } else if (i === 1) { %><span class="rank-badge silver">2</span>
+            <% } else if (i === 2) { %><span class="rank-badge bronze">3</span>
+            <% } else { %><span class="rank-num"><%= i + 1 %></span><% } %>
+          </td>
+          <td class="td-player">
+            <div class="player-cell">
+              <div class="player-avatar-sm"><%= player.display_name.charAt(0) %></div>
+              <div>
+                <div class="player-name-sm"><%= player.display_name %></div>
+                <div class="player-handle-sm">@<%= player.username %></div>
+              </div>
+            </div>
+          </td>
+          <td><span class="win-num"><%= player.wins %></span></td>
+          <td><span class="loss-num"><%= player.losses %></span></td>
+          <td><%= player.games_played %></td>
+          <td>
+            <div class="ratio-bar-wrap">
+              <div class="ratio-bar" style="width: <%= Math.min(player.ratio * 20, 100) %>%"></div>
+              <span class="ratio-text"><%= player.ratio.toFixed(2) %></span>
+            </div>
+          </td>
+          <% if (game === 'battleship' && player.extra) { %>
+          <td><%= player.extra.ships_sunk %></td>
+          <td><%= player.extra.total_shots > 0 ? ((player.extra.shots_hit / player.extra.total_shots) * 100).toFixed(1) + '%' : '—' %></td>
+          <% } else if (game === 'blackjack' && player.extra) { %>
+          <td><%= player.extra.hits %></td>
+          <td><%= player.extra.stands %></td>
+          <% } else if (game === 'connect_four' && player.extra) { %>
+          <td><%= player.extra.total_pieces %></td>
+          <% } %>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <% } %>
+</section>
+
+<%- include('partials/footer') %>
